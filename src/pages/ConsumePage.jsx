@@ -1,33 +1,38 @@
 import MainLayout from "../layouts/MainLayout";
 import { CategoryButton } from "../components/Button";
-import {
-  faBolt,
-  faDollarSign,
-  faShirt,
-  faBowlFood,
-  faPencil,
-  faWandMagicSparkles,
-} from "@fortawesome/free-solid-svg-icons";
 import styles from "./ConsumePage.module.scss";
 import { Title } from "../components/Title";
 import { PriorityBox } from "../components/PriorityBox";
 import fireImage from "../images/fire.png";
-import cloImage from "../images/clo.png"
+import cloImage from "../images/clo.png";
 import foodImage from "../images/food.png";
-import studyImage from "../images/study.png";  
+import studyImage from "../images/study.png";
 import lifeImage from "../images/life.png";
-
-
+import { useState, useEffect } from "react";
 
 export default function ConsumePage() {
+  const [jsonData, setJsonData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://13.209.254.86:8080/sobi/readAll")
+      .then((response) => response.json())
+      .then((data) => {
+        // 받아온 JSON 데이터를 상태에 저장
+        setJsonData(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+  console.log(jsonData);
   const category = [
     ["생산성", fireImage],
-    ["옷", cloImage ],
+    ["옷", cloImage],
     ["음식", foodImage],
     ["학습도구", studyImage],
     ["생활용품", lifeImage],
   ];
-  const categories = Array.from({ length:category.length }, (_, index) => (
+  const categories = Array.from({ length: category.length }, (_, index) => (
     <CategoryButton image={category[index][1]}>
       {category[index][0]}
     </CategoryButton>
