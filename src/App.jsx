@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<HomePage />}></Route>
 
         <Route path="/" element={<NavLayout />}>
-          <Route path="/date/calender/:year/:month" element={<CalendarPage />} />
+          <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/period" element={<PeriodPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/consume" element={<ConsumePage />} />

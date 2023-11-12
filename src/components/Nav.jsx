@@ -29,7 +29,7 @@ export const NavBottom = () => {
     <nav className={styles.wrapper}>
       <ul className={styles.container}>
         <NavItem to="/consume" image={moneyImage} text="소비 보기" />
-        <NavItem to="/date/calender/2023/11" image ={ calendarImage} text="달력 보기" />
+        <NavItem to="/calendar" image ={ calendarImage} text="달력 보기" />
         <NavItem to="/period" image ={ chartImage} text="기간별 보기" />
         <NavItem to="/settings" image ={ gearImage}text="환경 설정" />
       </ul>

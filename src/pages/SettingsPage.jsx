@@ -36,8 +36,8 @@ export default function SettingsPage() {
       {isPopupVisible && (
         <div className={styles.popup}>
           <div className={styles.popupContent}>
-            <p>추후 서비스 제공 예정입니다</p>
             <button onClick={()=>handleClosePopup()}>Close</button>
+            <p>추후 서비스 제공 예정입니다</p>
           </div>
         </div>
       )}
