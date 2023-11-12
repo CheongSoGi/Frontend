@@ -10,11 +10,10 @@ export const Button = ({ children, ...rest }) => {
   );
 };
 
-
 export const CategoryButton = ({ image, children, ...rest }) => {
   return (
     <button className={styles.btn_category} {...rest}>
-      <img src={image} alt ="category icon" width = "20" />
+      <img src={image} alt="category icon" width="20" />
       <span>{children}</span>
     </button>
   );
@@ -40,7 +39,7 @@ export const CheckButton = ({ icon, children, ...rest }) => {
 };
 
 export const PeriodButton = ({
-  icon,
+  image,
   text,
   prevConsume,
   curConsume,
@@ -49,19 +48,19 @@ export const PeriodButton = ({
 }) => {
   return (
     <button className={styles.btn_period} {...rest}>
-      <FontAwesomeIcon icon={icon} />
+      <img src={image} width="30" height="30" />
       <h2>{text}</h2>
       {prevConsume <= curConsume ? (
-        <p className={styles.red}>{curConsume}</p>
+        <p className={styles.red}>{curConsume.toLocaleString()}원</p>
       ) : (
-        <p className={styles.blue}>{curConsume}</p>
+        <p className={styles.blue}>{curConsume.toLocaleString()}원</p>
       )}
-      <p>{prevConsume}</p>
+      <p>{prevConsume.toLocaleString()}원</p>
     </button>
   );
 };
 
-export const SettingButton = ({ children,onClick, ...rest }) => {
+export const SettingButton = ({ children, onClick, ...rest }) => {
   return (
     <div className={styles.btn_setting} onClick={onClick}>
       <span>{children}</span>

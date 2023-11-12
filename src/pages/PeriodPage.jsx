@@ -4,6 +4,10 @@ import { Title } from "../components/Title";
 import { PeriodButton } from "../components/Button";
 import { useState, useEffect } from "react";
 
+import yearImage from "../images/year.png";
+import monthImage from "../images/month.png";
+import dayImage from "../images/day.png";
+
 export default function PeriodPage() {
   const [jsonData, setJsonData] = useState([]);
 
@@ -106,19 +110,19 @@ export default function PeriodPage() {
     <MainLayout>
       <Title>기간별 보기</Title>
       <PeriodButton
-        icon={faStopwatch}
+        image={yearImage}
         text="전 년 대비"
         prevConsume={sobiLastYearTotal}
         curConsume={sobiCurYearTotal}
       ></PeriodButton>
       <PeriodButton
-        icon={faStopwatch}
+        image={monthImage}
         text="전 월 대비"
         prevConsume={sobiLastMonthTotal}
         curConsume={sobiCurMonthTotal}
       ></PeriodButton>
       <PeriodButton
-        icon={faStopwatch}
+        image={dayImage}
         text="전 일 대비"
         prevConsume={sobiYesterdayTotal}
         curConsume={sobiTodayTotal}
